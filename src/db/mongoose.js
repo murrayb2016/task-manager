@@ -4,17 +4,8 @@ const connectionURL = 'mongodb://127.0.0.1:27017/task-manager-api'; //Local host
 
 mongoose.connect(connectionURL, {
     useNewUrlParser: true, 
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
-const Task = mongoose.model('Task', {
-    description: {
-        type: String, 
-        trim: true, 
-        required: true
-    }, 
-    completed: {
-        type: Boolean,
-        default: false
-    }
-});
+
